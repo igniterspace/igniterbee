@@ -2,3 +2,8 @@ test:
   override:
     - "true"
 
+deployment:
+  prod:
+    branch: master
+    commands:
+      - aws s3 sync igniterbee/src s3://lab.igniterbee.com --delete
