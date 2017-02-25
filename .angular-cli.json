@@ -35,7 +35,7 @@
           "../node_modules/jquery/dist/jquery.js",
           "../node_modules/bootstrap/dist/js/bootstrap.min.js",
           "../node_modules/dcjqaccordion/js/jquery.dcjqaccordion.2.7.js",
-          "../node_modules/jquery.scrollto/jquery.scrollto.min.js",
+          "../node_modules/jquery.scrollto/jquery.scrollTo.min.js",
           "../node_modules/jquery.cookie/jquery.cookie.js",
           "js/common-scripts.js",
           "js/count.js"
