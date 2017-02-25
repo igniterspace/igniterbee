@@ -16,4 +16,4 @@ deployment:
     branch: master
     commands:
       - ng build --prod
-      - aws s3 sync dist/ s3://lab.igniterbee.com --delete
+      - aws s3 sync dist/ s3://lab.igniterbee.com --region us-west-2 --delete
