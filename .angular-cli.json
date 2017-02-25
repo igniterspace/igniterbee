@@ -19,14 +19,27 @@
       ],
       "index": "index.html",
       "main": "main.ts",
-      "polyfills": "polyfills.ts",
+      "polyfills":"polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "css/bootstrap-reset.css",
+        "assets/font-awesome/css/font-awesome.css",
+        "css/style.css",
+        "css/style-responsive.css"
       ],
-      "scripts": [],
+      "scripts": [
+          "../node_modules/systemjs/dist/system.src.js",
+          "../node_modules/jquery/dist/jquery.js",
+          "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+          "../node_modules/dcjqaccordion/js/jquery.dcjqaccordion.2.7.js",
+          "../node_modules/jquery.scrollto/jquery.scrollto.min.js",
+          "../node_modules/jquery.cookie/jquery.cookie.js",
+          "js/common-scripts.js",
+          "js/count.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

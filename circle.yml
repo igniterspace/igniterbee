@@ -1,6 +1,8 @@
 machine:
   node:
     version: 7
+  post:
+    - npm install @angular/cli@latest -g
 
 dependencies:
   override:
@@ -9,7 +11,6 @@ dependencies:
 test:
   override:
     - "true"
-    - npm install @angular/cli@latest -g
 
 deployment:
   prod:
