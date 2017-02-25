@@ -1,7 +1,7 @@
 dependencies:
   pre:
     - npm install npm@latest -g # Should fix bug in ng test
-    - npm install angular-cli@latest -g
+    - npm install @angular/cli@latest -g
 
 test:
   override:
@@ -11,4 +11,5 @@ deployment:
   prod:
     branch: master
     commands:
-      - aws s3 sync src/ s3://lab.igniterbee.com --delete
+      - ng build --prod
+      - aws s3 sync dist/ s3://lab.igniterbee.com --delete
