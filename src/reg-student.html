@@ -15,6 +15,7 @@
     <link href="css/bootstrap-reset.css" rel="stylesheeFt">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
@@ -28,36 +29,31 @@
 </head>
 
   <body class="login-body">
-
+    
     <div class="container">
-      <div class="stepy-tab">
-          <ul id="default-titles" class="stepy-titles clearfix">
-              <li id="default-title-0" class="current-step">
-                  <div>1. Register</div>
-              </li>
-              <li id="default-title-1" class="">
-                  <div>2. Pay</div>
-              </li>
-              <li id="default-title-2" class="">
-                  <div>3. Signin</div>
-              </li>
-          </ul>
+      <div class="header-bg stepy-tab row">
+          <div class="col-lg-3 col-sm-12">
+            <img src="img/gallery/logo.png" class="header-image"/>
+          </div>
+          <div class="col-lg-9 col-sm-12">
+            <ul id="default-titles" class="stepy-titles clearfix">
+                <li id="default-title-0" class="current-step">
+                    <div>1. Register</div>
+                </li>
+                <li id="default-title-1" class="">
+                    <div>2. Pay</div>
+                </li>
+                <li id="default-title-2" class="">
+                    <div>3. Complete</div>
+                </li>
+            </ul>
+        </div>
       </div>
-      <form class="form-signin"  id="signupForm" method="get" action="index.html">
-        <h2 class="form-signin-heading">IgniterBee Registration</h2>
-        <div class="login-wrap">
-            <p>Enter parent's details</p>
-            <input type="text" class="form-control" id="parentsname" name="parentsname" placeholder="Parent's Name *" autofocus>
-            <div class="form-group">
-              <div class="row">
-                  <div class="col-lg-6 col-sm-6">
-                    <input type="text" class="form-control" id="parentsphone" name="parentsphone" placeholder="Parent's Phone (e.g. +94714819556) *" autofocus>
-                  </div>
-                  <div class="col-lg-6 col-sm-6">
-                    <input type="text" class="form-control" id="parentsemail" name="parentsemail" placeholder="Parent's Email" autofocus>
-                  </div>
-              </div>
-            </div>
+      <div class="row">
+        <form class="form-signin"  id="signupForm" method="get" action="http://lab.igniterbee.com/api/register">
+            <h2 class="form-signin-heading">IgniterBee Registration</h2>
+            <div class="login-wrap">
+                
             
             <p>Enter child's details</p>
             <input type="text" class="form-control" id="childsname" name="childsname" placeholder="Child's Full Name *" autofocus>
@@ -340,32 +336,51 @@
               </div>
             </div>
             
-            
-            <label class="checkbox">
-                <input type="checkbox" value="agree this condition" id="agree" name="agree"> I agree to the <a href="http://www.igniterspace.com/privacy-policy" target="_blank">Terms of Service and Privacy Policy</a>
-            </label>
-            <button class="btn btn-lg btn-success btn-block" type="submit">Submit</button>
-            <br/>
-            <div class="registration">
-                Already Registered?
-                <a class="" href="login.html">
-                    Login here
-                </a>
+
+                <button class="btn btn-lg btn-success btn-block btn-wizard" type="submit">Next ></button>
+                <br/>
+                <div class="registration">
+                    Already Registered?
+                    <a class="" href="login.html">
+                        Login here
+                    </a>
+                </div>
+
             </div>
 
-        </div>
-
-      </form>
-
+        </form>
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="js/registration-scripts.js"></script>
+    <script>
+        $(document).ready(function(){
+            $( "#signupForm" ).submit(function( event ) {
+                alert( "submit data to the backend here" );
+                var success = true;
+                if(success) {
+                    location.href = "./payment.html" + "?tab=" + tab;
+                }
+                event.preventDefault();
+            });
+        });
+    </script>
+    <script>
+        var tab = 'atonce';
+        $(document).ready(function(){
+            var temp = null;
+            if (temp = getUrlParameter('tab')) {
+                tab = temp;
+            }
+        });
+    </script>
     <script>
         $('.default-date-picker').datepicker({});
 
         // validate signup form on keyup and submit
-        $("#signupForm").validate({
+        /*$("#signupForm").validate({
             rules: {
                 parentsname: "required",
                 parentsphone: "required",
@@ -394,7 +409,7 @@
                 error.insertBefore(element);
             }
             
-        });
+        });*/
     </script>
   </body>
 </html>

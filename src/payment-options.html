@@ -48,15 +48,15 @@
             
           <section class="panel">
               <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home">Pay Monthly</a></li>
-                <li><a data-toggle="tab" href="#menu1">Pay at Once</a></li>
+                <li class="active"><a data-toggle="tab" href="#monthly">Pay Monthly</a></li>
+                <li><a data-toggle="tab" href="#atonce">Pay at Once</a></li>
               </ul>
 
               <div class="tab-content">
-                <div id="home" class="tab-pane fade in active">
+                <div id="monthly" class="tab-pane fade in active">
                   <br/><p>Your credit card will be charged <strong>USD 23</strong> monthly (near equivalant of Rs.3500/-) as your innovation pack is shipped from our wearhouse. 
                     
-                    <br/><br/>We have improved creativity of thousands of students through our activities. In the unlikely case you are not satisfied with our subscription, let us know within 3 months, we will <strong>refund you the total amount paid</strong> (including already shipped items). <br/><br/>Click below button to proceed with PayPal</p> <br/>
+                    <br/><br/> - We have improved creativity of thousands of students through our activities. In the unlikely case you are not satisfied with our subscription, let us know within 3 months, we will <strong>refund you the total amount paid</strong> (including already shipped items). <br/><br/>Click below button to proceed with PayPal</p> <br/>
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                         <input type="hidden" name="cmd" value="_s-xclick">
                         <input type="hidden" name="hosted_button_id" value="WPKY4WRPAB77W">
@@ -66,7 +66,7 @@
 
 
                 </div>
-                <div id="menu1" class="tab-pane fade">
+                <div id="atonce" class="tab-pane fade">
                   <br/><p>Your credit card will be charged <strong>USD 121</strong> (near equivalant of Rs.18500/-) immediately. 
                     
                     <br/><br/>We have improved creativity of thousands of students through our innovation activities. In the unlikely situation where you are not satisfied with our subscription, let us know within 3 months, we will <strong>refund you the total amount paid</strong> (including already shipped items). <br/><br/>Click below button to proceed with PayPal</p> <br/>
@@ -89,8 +89,17 @@
       </form>
     </section>
       
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/registration-scripts.js"></script>
+    <script>
+        $(document).ready(function(){
+            var tab = null;
+            if (tab = getUrlParameter('tab')) {
+                $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+            }
+        });
+    </script>
       
   </body>
 </html>

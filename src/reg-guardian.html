@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>IgniterBee Registration</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheeFt">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+  <body class="login-body">
+    
+    <div class="container">
+      <div class="header-bg stepy-tab row">
+          <div class="col-lg-3 col-sm-12">
+            <img src="img/gallery/logo.png" class="header-image"/>
+          </div>
+          <div class="col-lg-9 col-sm-12">
+            <ul id="default-titles" class="stepy-titles clearfix">
+                <li id="default-title-0" class="current-step">
+                    <div>1. Register</div>
+                </li>
+                <li id="default-title-1" class="">
+                    <div>2. Pay</div>
+                </li>
+                <li id="default-title-2" class="">
+                    <div>3. Complete</div>
+                </li>
+            </ul>
+        </div>
+      </div>
+      <div class="row">
+        <form class="form-signin"  id="signupForm" method="get" action="http://lab.igniterbee.com/api/register">
+            <h2 class="form-signin-heading">IgniterBee Registration</h2>
+            <div class="login-wrap">
+                <p>Enter parent's details</p>
+                <input type="text" class="form-control" id="parentsname" name="parentsname" placeholder="Parent's Name *" autofocus>
+                <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+                        <input type="text" class="form-control" id="parentsphone" name="parentsphone" placeholder="Parent's Phone (e.g. +94714819556) *" autofocus>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <input type="text" class="form-control" id="parentsemail" name="parentsemail" placeholder="Parent's Email" autofocus>
+                    </div>
+                </div>
+                </div>
+                
+                
+                
+                <label class="checkbox">
+                    <input type="checkbox" value="agree this condition" id="agree" name="agree"> I agree to the <a href="http://www.igniterspace.com/privacy-policy" target="_blank">Terms of Service and Privacy Policy</a>
+                </label>
+                <button class="btn btn-lg btn-success btn-block btn-wizard" type="submit">Next ></button>
+                <br/>
+                <div class="registration">
+                    Already Registered?
+                    <a class="" href="login.html">
+                        Login here
+                    </a>
+                </div>
+
+            </div>
+
+        </form>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="js/registration-scripts.js"></script>
+    <script>
+        $(document).ready(function(){
+            $( "#signupForm" ).submit(function( event ) {
+                alert( "submit data to the backend here" );
+                var success = true;
+                if(success) {
+                    location.href = "./payment.html" + "?tab=" + tab;
+                }
+                event.preventDefault();
+            });
+        });
+    </script>
+    <script>
+        var tab = 'atonce';
+        $(document).ready(function(){
+            var temp = null;
+            if (temp = getUrlParameter('tab')) {
+                tab = temp;
+            }
+        });
+    </script>
+    <script>
+        $('.default-date-picker').datepicker({});
+
+        // validate signup form on keyup and submit
+        /*$("#signupForm").validate({
+            rules: {
+                parentsname: "required",
+                parentsphone: "required",
+                parentsemail: {
+                    required: false,
+                    email:true
+                },
+                childsname: "required",
+                childsbirthday: "required",
+                shippingaddress: "required",
+                city: "required",
+                country: "required",
+                agree: "required"
+            },
+            messages: {
+                parentsname: "Please enter parent's name",
+                parentsphone: "Please enter phone number",
+                childsname: "Please enter child's name",
+                childsbirthday: "Please enter child's birthday",
+                shippingaddress: "Please enter shipping address",
+                city: "Please enter your city",
+                country: "Please select the country",
+                agree: "Policy agreement required"
+            },
+            errorPlacement: function(error, element) {
+                error.insertBefore(element);
+            }
+            
+        });*/
+    </script>
+  </body>
+</html>

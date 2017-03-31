@@ -21,6 +21,7 @@ function mobilecheck() {
     return check;
 };
 
+
 var Script = function () {
 
 //    sidebar dropdown menu auto scrolling

@@ -14,8 +14,9 @@
         "css",
         "js",
         "img",
-        "registration.html",
-        "payment.html"
+        "reg-guardian.html",
+        "reg-student.html",
+        "payment-options.html"
       ],
       "index": "index.html",
       "main": "main.ts",
