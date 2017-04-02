@@ -371,8 +371,28 @@
                     url: API_URL,
                     data: JSON.stringify({"phoneNumber": ""+phoneGuardian, "childName": $('#childsname').val(), "childGender": $("input[name='gender']:checked").val(), "childDob": $('#childsbirthday').val(), "city": $('#city').val(), "country": $('#country').val(), "shippingAddress": $('#shippingaddress').val() }),
                    //data: JSON.stringify({"phoneNumber": "11112", "childName": "apu", "childGender": "D", "childDob": "FF", "city": "R", "country": "FFE", "shippingAddress": "F" }),
-                    contentType: "application/json"
+                    contentType: "application/json",
+                    success: function(data) {
+                        if("SUCCESS" != data) {
+                    //alert("FAILED");
+
+                    $("#dialog-error").dialog('option', 'title', "Registration failed!");
+
+                    $("#dialog-error").dialog('open');
+                    
+                } else {
+                    
+
+                    location.href = "./payment-options.html"+"?phone="+phoneGuardian+"&tab=" + tab;
+                }
+
+                    }
                 });
+
+
+
+
+
 
 
 
