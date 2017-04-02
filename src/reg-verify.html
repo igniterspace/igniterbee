@@ -68,38 +68,27 @@
 
 
 		<div id="dialog-error" >
-          <p><span class="glyphicon glyphicon-alert" style="float:left; margin:12px 12px 20px 0; color:red; font-size: 1.7em"></span>An error has occured. Please enter all your details correctly.</p>
+          <p><span class="glyphicon glyphicon-alert" style="float:left; margin:12px 12px 20px 0; color:red; font-size: 1.7em"></span>Please enter the correct mobile verification code in order to proceed.</p>
         </div>
 
 
 
-        <div id="dialog-code" title="Dialog Form">
-        	<p>We have sent a verification code to  your mobile phone. Please enter the verification code in order to proceed.</p>
-			<form action="" method="post" id="verifyForm">
-				<label>Mobile code:</label>
-				<input id="code" name="code" type="text" placeholder="Mobile code">
-				<input id="submit" type="submit" value="Submit">
-			</form>
-		</div>
+     
 
 
 
 
 
-
-        <form class="form-signin"  id="signupForm" method="get" action="http://lab.igniterbee.com/api/register">
+        <form class="form-signin"  id="verifyForm" method="get" action="http://lab.igniterbee.com/api/register">
             <h2 class="form-signin-heading">IgniterBee Registration</h2>
             <div class="login-wrap">
-                <p>Enter parent's details</p>
-                <input type="text" class="form-control" id="parentsname" name="parentsname" placeholder="Parent's Name *" autofocus>
-                <input type="text" class="form-control" id="parentsemail" name="parentsemail" placeholder="Parent's Email *" autofocus>
+                <p>We have sent a 4 digit verification code to  your mobile phone. Please enter the verification code in order to proceed.</p>
+                
+                <input type="text" class="form-control" id="code" name="code" placeholder="Enter Mobile code" autofocus>
                 
                 
                 
-                
-                <label class="checkbox">
-                    <input type="checkbox" value="agree this condition" id="agree" name="agree"> I agree to the <a href="http://www.igniterspace.com/privacy-policy" target="_blank">Terms of Service and Privacy Policy</a>
-                </label>
+              
                 <button class="btn btn-lg btn-success btn-block btn-wizard" type="submit">Next ></button>
                 <br/>
                 <div class="registration">

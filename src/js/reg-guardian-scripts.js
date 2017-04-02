@@ -5,10 +5,11 @@ $(document).ready(function(){
     $( "#signupForm" ).submit(function( event ) {
         //--
         //make ajax request here
+        var phoneGuardian = getQueryVariable("phone");
         $.ajax({
             type: 'POST',
             url: API_URL,
-            data: JSON.stringify({"phoneNumber": $('#parentsphone').val(), "parentEmail": $('#parentsemail').val(), "parentName": $('#parentsname').val()}),
+            data: JSON.stringify({"phoneNumber": phoneGuardian, "parentEmail": $('#parentsemail').val(), "parentName": $('#parentsname').val()}),
             contentType: "application/json",
             success: function(data) {
                 if("SUCCESS" != data) {
@@ -19,10 +20,9 @@ $(document).ready(function(){
                     $("#dialog-error").dialog('open');
                     
                 } else {
-                    $("#dialog-code").dialog('option', 'title', "Enter mobile code");
-                    $("#dialog-code").dialog('open');
+                    
 
-                   // location.href = "./reg-student.html"+"?phone="+$('#parentsphone').val()+"&tab=" + tab;
+                    location.href = "./reg-student.html"+"?phone="+phoneGuardian+"&tab=" + tab;
                 }
                     
             }
@@ -40,24 +40,26 @@ $(document).ready(function(){
     $( "#verifyForm" ).submit(function( event ) {
             //--
             //make ajax request here
+
+            var phoneGuardian = getQueryVariable("phone");
+
             $.ajax({
                 type: 'POST',
                 url: API_URL,
-                data: JSON.stringify({"phoneNumber": $('#parentsphone').val(), "validationCode": $('#code').val()}),
+                data: JSON.stringify({"phoneNumber": phoneGuardian, "validationCode": $('#code').val()}),
                 contentType: "application/json",
                 success: function(data) {
                     if("SUCCESS" != data) {
                         //alert("FAILED");
 
-                        $("#dialog-error").dialog('option', 'title', "Registration failed!");
+                        $("#dialog-error").dialog('option', 'title', "Verification failed!");
 
                         $("#dialog-error").dialog('open');
                         
                     } else {
-                        $("#dialog-code").dialog('option', 'title', "Enter mobile code");
-                        $("#dialog-code").dialog('open');
 
-                        location.href = "./reg-student.html"+"?phone="+$('#parentsphone').val()+"&tab=" + tab;
+
+                        location.href = "./reg-guardian.html"+"?phone="+phoneGuardian+"&tab=" + tab;
                     }
                         
                 }
@@ -85,7 +87,16 @@ $(document).ready(function(){
 
 //---------------
 
-
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
 
 //---------------
 

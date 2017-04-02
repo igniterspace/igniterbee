@@ -17,6 +17,7 @@
         "reg-guardian.html",
         "reg-student.html",
         "reg-phone.html",
+        "reg-verify.html",
         "payment-options.html"
       ],
       "index": "index.html",
