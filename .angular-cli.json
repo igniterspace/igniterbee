@@ -30,6 +30,8 @@
         "css/bootstrap-reset.css",
         "assets/font-awesome/css/font-awesome.css",
         "css/style.css",
+        "css/phone-input.css",
+        "css/intlTelInput.css",
         "css/style-responsive.css"
       ],
       "scripts": [
@@ -43,7 +45,8 @@
           "js/reg-guardian-scripts.js",
           "js/registration-scripts.js",
           "js/reg-phone-scripts.js",
-          "js/count.js"
+          "js/count.js",
+          "js/intlTelInput.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
