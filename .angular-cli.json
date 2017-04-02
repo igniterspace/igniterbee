@@ -39,6 +39,8 @@
           "../node_modules/jquery.scrollto/jquery.scrollTo.min.js",
           "../node_modules/jquery.cookie/jquery.cookie.js",
           "js/common-scripts.js",
+          "js/reg-guardian-scripts.js",
+          "js/registration-scripts.js",
           "js/count.js"
       ],
       "environmentSource": "environments/environment.ts",
