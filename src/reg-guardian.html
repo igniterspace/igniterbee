@@ -21,16 +21,30 @@
     <link href="css/style-responsive.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css" />
 
+    
+
+
+
+
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+
+
+
+
+
 </head>
 
   <body class="login-body">
     
     <div class="container">
+
+
+
       <div class="header-bg stepy-tab row">
           <div class="col-lg-3 col-sm-12">
             <img src="img/gallery/logo.png" class="header-image"/>
@@ -50,6 +64,29 @@
         </div>
       </div>
       <div class="row">
+
+
+
+		<div id="dialog-error" >
+          <p><span class="glyphicon glyphicon-alert" style="float:left; margin:12px 12px 20px 0; color:red; font-size: 1.7em"></span>An error has occured. Please enter all your details correctly.</p>
+        </div>
+
+
+
+        <div id="dialog-code" title="Dialog Form">
+        	<p>We have sent a verification code to  your mobile phone. Please enter the verification code in order to proceed.</p>
+			<form action="" method="post" id="verifyForm">
+				<label>Mobile code:</label>
+				<input id="code" name="code" type="text" placeholder="Mobile code">
+				<input id="submit" type="submit" value="Submit">
+			</form>
+		</div>
+
+
+
+
+
+
         <form class="form-signin"  id="signupForm" method="get" action="http://lab.igniterbee.com/api/register">
             <h2 class="form-signin-heading">IgniterBee Registration</h2>
             <div class="login-wrap">
@@ -85,7 +122,15 @@
         </form>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    
+
+    <!--USING JQUERY UI -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
     <script src="js/registration-scripts.js"></script>
