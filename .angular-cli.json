@@ -16,6 +16,7 @@
         "img",
         "reg-guardian.html",
         "reg-student.html",
+        "reg-phone.html",
         "payment-options.html"
       ],
       "index": "index.html",
@@ -41,6 +42,7 @@
           "js/common-scripts.js",
           "js/reg-guardian-scripts.js",
           "js/registration-scripts.js",
+          "js/reg-phone-scripts.js",
           "js/count.js"
       ],
       "environmentSource": "environments/environment.ts",
