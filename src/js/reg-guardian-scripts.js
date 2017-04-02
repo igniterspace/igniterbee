@@ -11,7 +11,12 @@ $(document).ready(function(){
             data: JSON.stringify({"phoneNumber": $('#parentsphone').val(), "parentEmail": $('#parentsemail').val(), "parentName": $('#parentsname').val()}),
             contentType: "application/json",
             success: function(data) {
+                if("SUCCESS" != data) {
+                    
+                } else {
                     location.href = "./reg-student.html"+"?phone="+$('#parentsphone').val()+"&tab=" + tab;
+                }
+                    
             }
 
         });
