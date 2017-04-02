@@ -357,15 +357,54 @@
     <script src="js/registration-scripts.js"></script>
     <script>
         $(document).ready(function(){
+
+
+            var API_URL = "https://oxe44imldk.execute-api.us-west-2.amazonaws.com/dev/registerchild";
             $( "#signupForm" ).submit(function( event ) {
-                alert( "submit data to the backend here" );
+
+                //make ajax request
+                var phoneGuardian = getQueryVariable("phone");
+                //alert(phoneGuardian);
+
+                $.ajax({
+                    type: 'POST',
+                    url: API_URL,
+                    data: JSON.stringify({"phoneNumber": ""+phoneGuardian, "childName": $('#childsname').val(), "childGender": $("input[name='gender']:checked").val(), "childDob": $('#childsbirthday').val(), "city": $('#city').val(), "country": $('#country').val(), "shippingAddress": $('#shippingaddress').val() }),
+                   //data: JSON.stringify({"phoneNumber": "11112", "childName": "apu", "childGender": "D", "childDob": "FF", "city": "R", "country": "FFE", "shippingAddress": "F" }),
+                    contentType: "application/json"
+                });
+
+
+
+
+
+                //-------
+                //alert( "submit data to the backend here"+ getElementById('childsname').value );
                 var success = true;
-                if(success) {
-                    location.href = "./payment.html" + "?tab=" + tab;
-                }
+                //if(success) {
+                //    location.href = "./payment.html" + "?tab=" + tab;
+                //}
                 event.preventDefault();
             });
         });
+
+
+
+
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+
+
+
+
     </script>
     <script>
         var tab = 'atonce';
