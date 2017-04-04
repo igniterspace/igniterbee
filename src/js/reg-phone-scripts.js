@@ -21,37 +21,32 @@ $(document).ready(function(){
       // placeholderNumberType: "MOBILE",
       // preferredCountries: ['cn', 'jp'],
       // separateDialCode: true,
+      preferredCountries: ['lk'],
       utilsScript: "js/utils.js"
     });
 
     
     var API_URL = "https://oxe44imldk.execute-api.us-west-2.amazonaws.com/dev/register";
     $( "#phoneForm" ).submit(function( event ) {
+         event.preventDefault();
         //--
         //make ajax request here
+        var phoneNumber = $("#phone").intlTelInput("getNumber")
         $.ajax({
             type: 'POST',
             url: API_URL,
-            data: JSON.stringify({"phoneNumber": $('#parentsphone').val()}),
+            data: JSON.stringify({"phoneNumber": phoneNumber, "sendCode":true}),
             contentType: "application/json",
             success: function(data) {
                 if("SUCCESS" != data) {
-                    //alert("FAILED");
-
                     $("#dialog-error").dialog('option', 'title', "Registration failed!");
-
                     $("#dialog-error").dialog('open');
-                    
                 } else {
-                    location.href = "./reg-verify.html"+"?phone="+$('#parentsphone').val()+"&tab=" + tab;
-
-                   // location.href = "./reg-student.html"+"?phone="+$('#parentsphone').val()+"&tab=" + tab;
+                    location.href = "./reg-verify.html" + "?phone=" + phoneNumber + "&tab=" + tab;
                 }
-                    
             }
-
         });
-        event.preventDefault();
+       
     });
 });
 
