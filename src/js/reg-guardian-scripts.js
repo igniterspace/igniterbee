@@ -13,16 +13,12 @@ $(document).ready(function(){
             contentType: "application/json",
             success: function(data) {
                 if("SUCCESS" != data) {
-                    //alert("FAILED");
-
                     $("#dialog-error").dialog('option', 'title', "Registration failed!");
 
                     $("#dialog-error").dialog('open');
                     
                 } else {
-                    
-
-                    location.href = "./reg-student.html" + "?tab=" + tab;
+                    location.href = "./reg-student.html";
                 }
                     
             }
@@ -31,77 +27,6 @@ $(document).ready(function(){
         event.preventDefault();
     });
 });
-
-
-
-$(document).ready(function(){
-    var API_URL = "https://oxe44imldk.execute-api.us-west-2.amazonaws.com/dev/verifymobile";
-
-    $( "#verifyForm" ).submit(function( event ) {
-            //--
-            //make ajax request here
-
-            var phoneGuardian = sessionStorage.getItem("phoneNumber")
-
-
-            $.ajax({
-                type: 'POST',
-                url: API_URL,
-                data: JSON.stringify({"phoneNumber": phoneGuardian, "validationCode": $('#code').val()}),
-                contentType: "application/json",
-                success: function(data) {
-                    if("SUCCESS" != data) {
-                        //alert("FAILED");
-
-                        $("#dialog-error").dialog('option', 'title', "Verification failed!");
-
-                        $("#dialog-error").dialog('open');
-                        
-                    } else {
-
-
-                        location.href = "./reg-guardian.html" + "?tab=" + tab;
-                    }
-                        
-                }
-
-            });
-            event.preventDefault();
-        });
-
-});
-
-
-
-
-var tab = 'atonce';
-$(document).ready(function(){
-    var temp = null;
-    if (temp = getUrlParameter('tab')) {
-        tab = temp;
-    }
-});
-
-
-
-
-
-//---------------
-
-function getQueryVariable(variable)
-{
-       var query = window.location.search.substring(1);
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       return(false);
-}
-
-//---------------
-
-
 
 
 

@@ -57,7 +57,7 @@
           <p><span class="glyphicon glyphicon-alert" style="float:left; margin:12px 12px 20px 0; color:red; font-size: 1.7em"></span>Please enter the correct mobile verification code in order to proceed.</p>
         </div>
 
-        <form class="form-signin"  id="verifyForm" method="get" action="http://lab.igniterbee.com/api/register">
+        <form class="form-signin"  id="verifyForm" method="get" action="">
             <h2 class="form-signin-heading">IgniterBee Registration</h2>
             <div class="login-wrap">
                 <p>We have sent a 4 digit verification code to  your mobile phone number <span id="phone"/>. Please enter that code in order to proceed.</p>
@@ -90,28 +90,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
     <script src="js/registration-scripts.js"></script>
-    <script src="js/reg-guardian-scripts.js"></script>
-    <script>
+    <script src="js/reg-verify-scripts.js"></script>
 
-  $(document).ready(function() {
-    $("#phone").text(sessionStorage.getItem("phoneNumber"));
-
-    $("#dialog-error").dialog({
-      autoOpen:false,
-      resizable: false,
-      height: "auto",
-      width: "auto",
-      modal: true,
-      responsive: true,
-      buttons: {
-        OK: function() {
-          $( this ).dialog( "close" );
-        }
-      }
-    });
-  });
-
-
-    </script>
   </body>
 </html>
