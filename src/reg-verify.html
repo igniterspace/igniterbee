@@ -53,7 +53,7 @@
 
 
 
-		<div id="dialog-error" >
+		    <div id="dialog-error" >
           <p><span class="glyphicon glyphicon-alert" style="float:left; margin:12px 12px 20px 0; color:red; font-size: 1.7em"></span>Please enter the correct mobile verification code in order to proceed.</p>
         </div>
 
@@ -61,18 +61,18 @@
             <h2 class="form-signin-heading">IgniterBee Registration</h2>
             <div class="login-wrap">
                 <p>We have sent a 4 digit verification code to  your mobile phone number <span id="phone"/>. Please enter that code in order to proceed.</p>
-                
-                <input type="text" class="form-control" id="code" name="code" placeholder="Enter Verification Code" autofocus>
-
-                <button class="btn btn-lg btn-success btn-block btn-wizard" type="submit">Next ></button>
-                <br/>
-                <div class="registration">
-                    Already Registered?
-                    <a class="" href="login.html">
-                        Login here
-                    </a>
-                </div>
-
+                <p>
+                  <input type="text" class="form-control reg-form-control code-input" id="code" name="code" placeholder="Enter Verification Code" autofocus>
+                  <br/>
+                  <button class="btn btn-lg btn-success btn-block btn-wizard  btn-next reg-form-control" type="submit">Next ></button>
+                  <br/>
+                  <div class="registration">
+                      Already Registered?
+                      <a class="" href="login.html">
+                          Login here
+                      </a>
+                  </div>
+                </p>
             </div>
 
         </form>

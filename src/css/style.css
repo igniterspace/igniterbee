@@ -19,6 +19,14 @@ Website: http://thevectorlab.net/
     height: 45px;
 }
 
+.code-input {
+    width: 200px;
+}
+
+.reg-form-control {
+    display: inline;
+}
+
 body {
     color: #797979;
     background: #f1f2f7;
