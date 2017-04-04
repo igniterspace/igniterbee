@@ -43,7 +43,9 @@ $(document).ready(function(){
                     $("#dialog-error").dialog('option', 'title', "Registration failed!");
                     $("#dialog-error").dialog('open');
                 } else {
-                    location.href = "./reg-verify.html" + "?phone=" + phoneNumber + "&tab=" + tab;
+                    //location.href = "./reg-verify.html" + "?phone=" + phoneNumber + "&tab=" + tab;
+                    location.href = "./reg-verify.html" + "?tab=" + tab;
+
                 }
             }
         });
