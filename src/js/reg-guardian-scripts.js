@@ -5,7 +5,7 @@ $(document).ready(function(){
     $( "#signupForm" ).submit(function( event ) {
         //--
         //make ajax request here
-        var phoneGuardian = getQueryVariable("phone");
+        var phoneGuardian = sessionStorage.getItem("phoneNumber");
         $.ajax({
             type: 'POST',
             url: API_URL,
@@ -22,7 +22,7 @@ $(document).ready(function(){
                 } else {
                     
 
-                    location.href = "./reg-student.html"+"?phone="+phoneGuardian+"&tab=" + tab;
+                    location.href = "./reg-student.html" + "?tab=" + tab;
                 }
                     
             }
@@ -41,7 +41,8 @@ $(document).ready(function(){
             //--
             //make ajax request here
 
-            var phoneGuardian = getQueryVariable("phone");
+            var phoneGuardian = sessionStorage.getItem("phoneNumber")
+
 
             $.ajax({
                 type: 'POST',
@@ -59,7 +60,7 @@ $(document).ready(function(){
                     } else {
 
 
-                        location.href = "./reg-guardian.html"+"?phone="+phoneGuardian+"&tab=" + tab;
+                        location.href = "./reg-guardian.html" + "?tab=" + tab;
                     }
                         
                 }
