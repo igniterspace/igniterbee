@@ -46,6 +46,7 @@
           "js/reg-guardian-scripts.js",
           "js/registration-scripts.js",
           "js/reg-phone-scripts.js",
+          "js/reg-student-scripts.js",
           "js/count.js",
           "js/intlTelInput.min.js",
           "js/utils.js"
