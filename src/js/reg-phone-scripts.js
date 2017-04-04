@@ -32,6 +32,7 @@ $(document).ready(function(){
         //--
         //make ajax request here
         var phoneNumber = $("#phone").intlTelInput("getNumber")
+        sessionStorage.setItem("phoneNumber", phoneNumber);
         $.ajax({
             type: 'POST',
             url: API_URL,
