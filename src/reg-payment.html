@@ -90,6 +90,11 @@
 
             var phoneGuardian = sessionStorage.getItem("phoneNumber");
             $('.paypal_return_input input').val('https://lab.igniterbee.com/reg_success.html?phone=' + phoneGuardian);
+
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+              var target = $(e.target).attr("href");
+              sessionStorage.setItem("tab", target.substring(1));
+            });
         });
     </script>
       
