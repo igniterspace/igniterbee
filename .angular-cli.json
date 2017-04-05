@@ -18,6 +18,7 @@
         "reg-student.html",
         "reg-phone.html",
         "reg-verify.html",
+        "reg-success.html",
         "reg-payment.html"
       ],
       "index": "index.html",

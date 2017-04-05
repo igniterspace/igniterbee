@@ -14,12 +14,14 @@ $(document).ready(function(){
                 data: JSON.stringify({"phoneNumber": ""+phoneGuardian, "childName": $('#childsname').val(), "childGender": $("input[name='gender']:checked").val(), "childDob": $('#childsbirthday').val(), "city": $('#city').val(), "country": $('#country').val(), "shippingAddress": $('#shippingaddress').val() }),
                 contentType: "application/json",
                 success: function(data) {
-                if("SUCCESS" != data) {
-                    $("#dialog-error").dialog('option', 'title', "Registration failed!");
-                    $("#dialog-error").dialog('open');
-                } else {
-                    location.href = "./reg-payment.html";
-                }
+                    var result = JSON.parse(data);
+                    if("SUCCESS" != result.status) {
+                        $("#dialog-error").dialog('option', 'title', "Registration failed!");
+                        $("#dialog-error").dialog('open');
+                    } else {
+                        sessionStorage.setItem("timestamp", result.value.timestamp);
+                        location.href = "./reg-payment.html";
+                    }
 
                 }
             });

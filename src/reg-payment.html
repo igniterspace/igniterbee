@@ -43,7 +43,7 @@
             
           <section class="panel">
               <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#atonce">Pay at Once</a></li>
+                <li><a data-toggle="tab" href="#atonce">Pay at Once</a></li>
                 <li><a data-toggle="tab" href="#monthly">Pay Monthly</a></li>
                 
               </ul>
@@ -51,29 +51,24 @@
               <div class="tab-content">
                 
                 <div id="atonce" class="tab-pane fade">
-                  <br/><p>Your credit card will be charged <strong>USD 121</strong> (near equivalant of Rs.18500/-). 
-                    
-                    <br/><br/> In the unlikely event you are not satisfied with our subscription, let us know within 3 months. We will <strong>refund you the total amount paid</strong> (including for already shipped items). <br/><br/>Click below button to proceed with PayPal payment</p> <br/>
-                  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                    <input type="hidden" name="cmd" value="_s-xclick">
-                    <input type="hidden" name="hosted_button_id" value="4PJ6DAXJ8Z694">
-                    <table>
-                    <tr><td><input type="hidden" name="on0" value="Comment/Special Instructions">Comment/Special Instructions</td></tr><tr><td><input type="text" name="os0" maxlength="200"></td></tr>
-                    </table>
-                    <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
-                    <img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
-                  </form>
-
-                </div>
-                <div id="monthly" class="tab-pane fade in active">
-                  <br/><p>Your credit card will be charged <strong>USD 23</strong> monthly (near equivalant of Rs.3500/-) as your innovation pack is shipped from our wearhouse. 
-                    
+                  <br/><p>Your credit card will be charged <strong>USD 126</strong> (near equivalant of Rs.19200/-). 
                     <br/><br/> In the unlikely event you are not satisfied with our subscription, let us know within 3 months. We will <strong>refund you the total amount paid</strong> (including for already shipped items). <br/><br/>Click below button to proceed with PayPal payment</p> <br/>
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                        <input type="hidden" name="cmd" value="_s-xclick">
-                        <input type="hidden" name="hosted_button_id" value="WPKY4WRPAB77W">
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                        <img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
+                      <input type="hidden" name="cmd" value="_s-xclick">
+                      <input type="hidden" name="hosted_button_id" value="SFKCAFX98LPNJ">
+                      <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                      <img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+                </div>
+
+                <div id="monthly" class="tab-pane fade in active">
+                  <br/><p>Your credit card will be charged <strong>USD 26</strong> (near equivalant of Rs.4000/-) monthly for next 6 months when your innovation pack is shipped from our wearhouse. 
+                    <br/><br/> In the unlikely event you are not satisfied with our subscription, let us know within 3 months. We will <strong>refund you the total amount paid</strong> (including for already shipped items). <br/><br/>Click below button to proceed with PayPal payment</p> <br/>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                      <input type="hidden" name="cmd" value="_s-xclick">
+                      <input type="hidden" name="hosted_button_id" value="3DTK2CREVYSVY">
+                      <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                      <img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
                     </form>
                 </div>
               </div>
@@ -92,6 +87,9 @@
             var tab = "atonce";
             tab = sessionStorage.getItem("tab")? sessionStorage.getItem("tab"): tab;
             $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+
+            var phoneGuardian = sessionStorage.getItem("phoneNumber");
+            $('.paypal_return_input input').val('https://lab.igniterbee.com/reg_success.html?phone=' + phoneGuardian);
         });
     </script>
       
