@@ -53,32 +53,32 @@
                 
             
             <p>Enter child's details</p>
-            <input type="text" class="form-control" id="childsname" name="childsname" placeholder="Child's Full Name *" autofocus>
+            <input type="text" class="form-control" id="childsname" name="childsname" placeholder="Child's Full Name *" required autofocus>
             <div class="row form-group">
                   <div class="col-lg-6 col-sm-6">
-                    <input class="form-control form-control-inline input-medium default-date-picker"  id="childsbirthday" name="childsbirthday" size="16" type="text" value="" placeholder="Child's Birthday *"/>
+                    <input class="form-control form-control-inline input-medium default-date-picker"  id="childsbirthday" name="childsbirthday" size="16" type="text" value="" placeholder="Child's Birthday *"  required/>
                   </div>
                   <div class="radios">
                         <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Gender</label>
                         <label class="label_radio col-lg-2 col-sm-2" for="radio-01">
-                            <input name="gender"  value="Boy" type="radio" checked /> Boy
+                            <input name="gender"  value="M" type="radio" checked /> Boy
                         </label>
                         <label class="label_radio col-lg-2 col-sm-2" for="radio-02">
-                            <input name="gender" value="Girl" type="radio"  /> Girl
+                            <input name="gender" value="F" type="radio"  /> Girl
                         </label>
                   </div>
             </div>
             
             <p>Enter shipping details</p>
-            <input type="text" class="form-control" id="shippingaddress" name="shippingaddress" placeholder="Shipping Street Address *" autofocus>
+            <input type="text" class="form-control" id="shippingaddress" name="shippingaddress" placeholder="Shipping Street Address *" required autofocus>
             <div class="form-group">
               <div class="row">
                   <div class="col-lg-6 col-sm-6">
-                     <input type="text" class="form-control" id="city" name="city" placeholder="City/Town *" autofocus>
+                     <input type="text" class="form-control" id="city" name="city" placeholder="City/Town *" required autofocus>
                   </div>
                   <div class="col-lg-6 col-sm-6">
-                    <select class="form-control input-lg m-bot15" id="country" name="country" >
-                        <option value="" disabled selected hidden>Country *</option>
+                    <select class="form-control input-lg m-bot15" id="country" name="country" class="required" >
+                        <option value=""  selected disabled hidden>Country *</option>
                         <option value="AFG">Afghanistan</option>
                         <option value="ALA">Åland Islands</option>
                         <option value="ALB">Albania</option>

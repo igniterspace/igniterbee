@@ -53,26 +53,28 @@
 
 
 
-		    <div id="dialog-error" >
-          <p><span class="glyphicon glyphicon-alert" style="float:left; margin:12px 12px 20px 0; color:red; font-size: 1.7em"></span>Please enter the correct mobile verification code in order to proceed.</p>
+		<div id="dialog-error" >
+          <p><span class="glyphicon glyphicon-alert" style="float:left; margin:12px 12px 20px 0; color:red; font-size: 1.7em"></span>Wrong mobile verification code entered. </p>
+          <p>Enter the new verification code that is sent to your phone.</p>
         </div>
 
-        <form class="form-signin"  id="verifyForm" method="get" action="">
+        <form class="form-signin"  id="verifyForm" method="get" action="http://lab.igniterbee.com/api/register">
             <h2 class="form-signin-heading">IgniterBee Registration</h2>
             <div class="login-wrap">
                 <p>We have sent a 4 digit verification code to  your mobile phone number <span id="phone"/>. Please enter that code in order to proceed.</p>
-                <p>
-                  <input type="text" class="form-control reg-form-control code-input" id="code" name="code" placeholder="Enter Verification Code" autofocus>
-                  <br/>
-                  <button class="btn btn-lg btn-success btn-block btn-wizard  btn-next reg-form-control" type="submit">Next ></button>
-                  <br/>
-                  <div class="registration">
-                      Already Registered?
-                      <a class="" href="login.html">
-                          Login here
-                      </a>
-                  </div>
-                </p>
+                
+                <input type="number" class="form-control" id="code" name="code" placeholder="Enter Verification Code" autocomplete="off" required autofocus>
+                <br/>
+
+                <button class="btn btn-lg btn-success btn-block btn-wizard" type="submit">Next ></button>
+                <br/>
+                <div class="registration">
+                    Already Registered?
+                    <a class="" href="login.html">
+                        Login here
+                    </a>
+                </div>
+
             </div>
 
         </form>
@@ -90,7 +92,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
     <script src="js/registration-scripts.js"></script>
+    <script src="js/reg-guardian-scripts.js"></script>
     <script src="js/reg-verify-scripts.js"></script>
-
+    
   </body>
 </html>
