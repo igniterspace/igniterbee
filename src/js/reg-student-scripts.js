@@ -8,6 +8,7 @@ $(document).ready(function(){
         var phoneGuardian = sessionStorage.getItem("phoneNumber");
         //alert(phoneGuardian);
 
+
         $.ajax({
                 type: 'POST',
                 url: API_URL,
@@ -18,7 +19,7 @@ $(document).ready(function(){
                     $("#dialog-error").dialog('option', 'title', "Registration failed!");
                     $("#dialog-error").dialog('open');
                 } else {
-                    location.href = "./reg-payment.html";
+                    location.href = "./payment-options.html";
                 }
 
                 }
