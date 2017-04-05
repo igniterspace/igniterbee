@@ -29,32 +29,29 @@
     
     <div class="container">
 
-
-
       <div class="header-bg stepy-tab row">
           <div class="col-lg-12 col-sm-12">
             <img src="img/gallery/IgniterBee.png" class="header-image"/>
           </div>
       </div>
+
       <div class="row">
-
-
 
 		<div id="dialog-error" >
           <p><span class="glyphicon glyphicon-alert" style="float:left; margin:12px 12px 20px 0; color:red; font-size: 1.7em"></span>An error has occured. Please enter your telephone number correctly</p>
         </div>
 
-
-
-        <form class="form-signin"  id="phoneForm" method="get" action="http://lab.igniterbee.com/api/register">
+        <form class="form-signin"  id="phoneForm" method="get" action="">
             <h2 class="form-signin-heading">IgniterBee Registration</h2>
             <div class="login-wrap">
                 <p><b>Enter your mobile number</b></p>
                 <p>
                     We will send you a confimation code to verify this phone number. Please use that code in the next screen.    
                     <br/><br/>
+
                     <!--input type="text" class="form-control" id="parentsphone" name="parentsphone" placeholder="Parent's Phone (e.g. +94714819556) *" autofocus-->
                     <input type="tel" id="phone" required autofocus>
+
                     <br/>
                     <button class="btn btn-lg btn-success btn-wizard btn-next" type="submit">Verify</button>
                     <br/>
@@ -84,7 +81,6 @@
     
     <script src="js/intlTelInput.min.js"></script>
     <script src="js/registration-scripts.js"></script>
-    <script src="js/reg-guardian-scripts.js"></script>
     <script src="js/reg-phone-scripts.js"></script>
   </body>
 </html>

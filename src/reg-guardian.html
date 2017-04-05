@@ -21,21 +21,11 @@
     <link href="css/style-responsive.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css" />
 
-    
-
-
-
-
-
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-
-
-
-
 
 </head>
 
@@ -43,63 +33,29 @@
     
     <div class="container">
 
-
-
       <div class="header-bg stepy-tab row">
+
           <div class="col-lg-3 col-sm-12">
+
+          <div class="col-lg-12 col-sm-12">
+
             <img src="img/gallery/IgniterBee.png" class="header-image"/>
           </div>
-          <div class="col-lg-9 col-sm-12">
-            <ul id="default-titles" class="stepy-titles clearfix">
-                <li id="default-title-0" class="current-step">
-                    <div>1. Register</div>
-                </li>
-                <li id="default-title-1" class="">
-                    <div>2. Pay</div>
-                </li>
-                <li id="default-title-2" class="">
-                    <div>3. Complete</div>
-                </li>
-            </ul>
-        </div>
       </div>
+
       <div class="row">
-
-
 
 		<div id="dialog-error" >
           <p><span class="glyphicon glyphicon-alert" style="float:left; margin:12px 12px 20px 0; color:red; font-size: 1.7em"></span>An error has occured. Please enter all your details correctly.</p>
         </div>
 
-
-
-        <div id="dialog-code" title="Dialog Form">
-        	<p>We have sent a verification code to  your mobile phone. Please enter the verification code in order to proceed.</p>
-			<form action="" method="post" id="verifyForm">
-				<label>Mobile code:</label>
-				<input id="code" name="code" type="text" placeholder="Mobile code">
-				<input id="submit" type="submit" value="Submit">
-			</form>
-		</div>
-
-
-
-
-
-
         <form class="form-signin"  id="signupForm" method="get" action="http://lab.igniterbee.com/api/register">
             <h2 class="form-signin-heading">IgniterBee Registration</h2>
             <div class="login-wrap">
-                <p>Enter parent's details</p>
+                <p>Enter parent/guardian details</p>
                 <input type="text" class="form-control" id="parentsname" name="parentsname" placeholder="Parent's Name *" autofocus>
                 <input type="text" class="form-control" id="parentsemail" name="parentsemail" placeholder="Parent's Email *" autofocus>
-                
-                
-                
-                
-                <label class="checkbox">
-                    <input type="checkbox" value="agree this condition" id="agree" name="agree"> I agree to the <a href="http://www.igniterspace.com/privacy-policy" target="_blank">Terms of Service and Privacy Policy</a>
-                </label>
+ 
                 <button class="btn btn-lg btn-success btn-block btn-wizard" type="submit">Next ></button>
                 <br/>
                 <div class="registration">
@@ -127,7 +83,5 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
     <script src="js/registration-scripts.js"></script>
     <script src="js/reg-guardian-scripts.js"></script>
-    <script src="js/reg-phone-scripts.js"></script>
-    <script src="js/intlTelInput.min.js"></script>
   </body>
 </html>
