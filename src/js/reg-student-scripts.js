@@ -8,6 +8,7 @@ $(document).ready(function(){
         var phoneGuardian = sessionStorage.getItem("phoneNumber");
         //alert(phoneGuardian);
 
+
         $.ajax({
                 type: 'POST',
                 url: API_URL,

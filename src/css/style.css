@@ -6296,3 +6296,32 @@ header.blue-bg .search:focus {
 .note-editor .note-editable ul li {
     list-style: disc;
 }
+
+/*-- Remove spinners from input type number textbox --*/
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+/*-- Style for navbar --*/
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 150px;
+    height: 90px;
+    padding-top: 0;
+}
+
+ .navbar.navbar-xxx{
+   background-color: #000000;
+   border-color: #c0392b;
+ }
+ .navbar{
+    margin-bottom: 0px;
+
+ }
