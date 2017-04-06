@@ -6310,6 +6310,18 @@ input[type=number] {
 }
 
 /*-- Style for navbar --*/
+
+.logoImage{
+    margin-top: 10px; 
+    width: 130px; 
+    height: 70px; 
+    position: relative;
+}
+
+
+
+
+
 .navbar-brand,
 .navbar-nav li a {
     /*line-height: 150px;*/
@@ -6321,9 +6333,9 @@ input[type=number] {
     font-size: 16px;
 }
 
- .navbar.navbar-xxx{
-   background-color: #000000;
-   border-color: #c0392b;
+ .navbar.navbar{
+   background-color: #141414;
+   display: block;
  }
  .navbar{
     margin-bottom: 0px;
