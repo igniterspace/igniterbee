@@ -6312,9 +6312,13 @@ input[type=number] {
 /*-- Style for navbar --*/
 .navbar-brand,
 .navbar-nav li a {
-    line-height: 150px;
+    /*line-height: 150px;*/
+    line-height: 25px;
     height: 90px;
-    padding-top: 0;
+    padding: 0px;
+    color:white;
+    font-family: Helvetica;
+    font-size: 16px;
 }
 
  .navbar.navbar-xxx{
@@ -6323,5 +6327,26 @@ input[type=number] {
  }
  .navbar{
     margin-bottom: 0px;
-
  }
+ 
+.navbar-nav{
+    height: 0px;
+}
+
+.navbar-nav li{
+
+}
+
+.navbar-nav > li > a:focus,
+.navbar-nav > li > a:hover{
+   /* border-top: 5px solid grey;*/
+    box-shadow: 0 5px 0 0 grey inset;
+    background-color: transparent;
+    
+}
+.navbar-nav{
+    padding-top:25px;
+}
+#navlink{
+    padding-top: 20px;
+}
