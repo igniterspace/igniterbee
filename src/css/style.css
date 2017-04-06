@@ -6331,6 +6331,7 @@ input[type=number] {
     color:white;
     font-family: Helvetica;
     font-size: 16px;
+
 }
 
  .navbar.navbar{
@@ -6347,6 +6348,7 @@ input[type=number] {
 
 .navbar-nav li{
 
+
 }
 
 .navbar-nav > li > a:focus,
@@ -6361,4 +6363,7 @@ input[type=number] {
 }
 #navlink{
     padding-top: 20px;
+    width:250px;
+    text-align: center;
+    
 }
