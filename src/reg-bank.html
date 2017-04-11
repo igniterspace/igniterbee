@@ -60,7 +60,7 @@
 
 
     <section class="row">
-      <form class="form-signin form-payment">
+      <div class="form-signin form-payment">
         <h2 class="form-signin-heading">IgniterBee Registration <br/>(STEP 3/3)</h2>
         <div class="login-wrap">
             
@@ -75,11 +75,12 @@
               Branch: <b>Gangodawila</b> <br/>
               Account No: <b>013510002975</b><br/>
               Account Name: <b>KidsIgnite (private) Ltd</b><br/>
-              Amount: <b>Rs. 19,200/-</b>
+              Amount: <b>Rs. 19,200/-</b><br/><br/>
+              <button class="btn btn-lg btn-success btn-block btn-wizard" id="sms_bank" style="width:300px">SMS me Account Details</button>
           </p>
         <p><h3>Need more information? <br/>Call us on +94 774 223 902 </h3></p>
         </div>
-      </form>
+      </div>
     </section>
       
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script> 
@@ -87,17 +88,33 @@
     <script src="js/registration-scripts.js"></script>
     <script>
         $(document).ready(function(){
-            var tab = "atonce";
-            tab = sessionStorage.getItem("tab")? sessionStorage.getItem("tab"): tab;
-            $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+            var phoneNumber = sessionStorage.getItem("phoneNumber");
+            var timestamp = sessionStorage.getItem("timestamp");
 
-            var phoneGuardian = sessionStorage.getItem("phoneNumber");
-            $('.paypal_return_input input').val('https://lab.igniterbee.com/reg_success.html?phone=' + phoneGuardian);
-
-            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-              var target = $(e.target).attr("href");
-              sessionStorage.setItem("tab", target.substring(1));
+            var API_URL = "https://oxe44imldk.execute-api.us-west-2.amazonaws.com/dev/SmsBankDetails";
+            $( "#sms_bank" ).click(function( event ) {
+                $('#sms_bank').text('Please wait...');
+                event.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: API_URL,
+                    data: JSON.stringify({"phoneNumber": phoneNumber, "timestamp":timestamp}),
+                    contentType: "application/json",
+                    success: function(data) {
+                        if("SUCCESS" != data) {
+                            $("#dialog-error").dialog('option', 'title', "SMS sending failed!");
+                            $("#dialog-error").dialog('open');
+                            $('#sms_bank').text('ERROR!');
+                        } else {
+                            $('#sms_bank').text('SMS Sent to ' + phoneNumber +'!');
+                        }
+                    }
+                });
+            
             });
+            
+            
+
         });
     </script>
     <script>
