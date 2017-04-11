@@ -14,9 +14,20 @@ Website: http://thevectorlab.net/
   .iti-flag {background-image: url("../img/flags@2x.png");}
 }
 
+.intl-tel-input .selected-flag{
+    z-index: 10;
+}
 .validation-code {
     width: 200px;
     display: inline;
+}
+
+.lab-nav {
+    float: right;
+}
+
+.pay-options {
+    padding: 0px 38px;
 }
 
 .payment-option {
@@ -78,6 +89,7 @@ a, a:hover, a:focus {
 }
 
 .btn-wizard {
+    height: 50px;
     width: 100px;
     display: inline;
 }
@@ -176,11 +188,8 @@ a, a:hover, a:focus {
     font-weight: 300;
 }
 
-.form-payment p {
-    text-align: left;
-    color: #616060;
-    font-size: 16px;
-    font-weight: 300;
+.form-signin div {
+    text-align: center;
 }
 
 

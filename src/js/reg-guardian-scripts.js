@@ -1,34 +1,39 @@
 
 $(document).ready(function(){
 
+    $("#phone").intlTelInput({
+      preferredCountries: ['lk'],
+      utilsScript: "js/utils.js"
+    });
+
     var API_URL = "https://oxe44imldk.execute-api.us-west-2.amazonaws.com/dev/register";
     $( "#signupForm" ).submit(function( event ) {
         //--
         //make ajax request here
         var phoneGuardian = sessionStorage.getItem("phoneNumber");
+        var email = $('#parentsemail').val();
+        var name = $('#parentsname').val();
+
+        sessionStorage.setItem("parentEmail", email);
+        sessionStorage.setItem("parentName", name);
+        
         $.ajax({
             type: 'POST',
             url: API_URL,
-            data: JSON.stringify({"phoneNumber": phoneGuardian, "parentEmail": $('#parentsemail').val(), "parentName": $('#parentsname').val()}),
+            data: JSON.stringify({"phoneNumber": phoneGuardian, "parentEmail": email, "parentName": name}),
             contentType: "application/json",
             success: function(data) {
                 if("SUCCESS" != data) {
                     $("#dialog-error").dialog('option', 'title', "Registration failed!");
-
                     $("#dialog-error").dialog('open');
-                    
                 } else {
                     location.href = "./reg-student.html";
                 }
-                    
             }
-
         });
         event.preventDefault();
     });
 });
-
-
 
 
   $(document).ready(function() {

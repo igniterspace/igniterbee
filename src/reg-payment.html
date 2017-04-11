@@ -45,7 +45,7 @@
             <!-- Navbar content -->
 
             <div class="collapse navbar-collapse col-md-4 col-md-offset-5">
-                <ul class="nav navbar-nav" >
+                <ul class="nav navbar-nav lab-nav" >
                     <li ><a href="http://www.igniterbee.com/contact-us" id="navlink">Contact Us</a></li>
                 </ul>
             </div>
@@ -57,8 +57,8 @@
 
 
     <section class="row">
-      <form class="form-signin form-payment">
-        <h2 class="form-signin-heading">IgniterBee Registration <br/>(STEP 4/6)</h2>
+      <div class="form-signin">
+        <h2 class="form-signin-heading">IgniterBee Registration <br/>(STEP 3/3)</h2>
         <div class="login-wrap">
             
           <section class="panel">
@@ -75,11 +75,11 @@
                     <br/><br/> In the unlikely event you are not satisfied with our subscription, let us know within 3 months. We will <strong>refund you the total amount paid</strong> (including for already shipped items). <br/>
                     <br/>You may do the payment through one of the following ways:</br>
                     <br/></p>
-                    <div class="row">
+                    <div class="row pay-options">
                       <div class="col-sm-12 col-md-12 col-lg-6 payment-option">
-                        <br/><p>PayPal/Creditcard</p> 
+                        <br/><p>OPTION 1: PayPal/Creditcard</p> 
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                          <input type="hidden" name="custom" class="custom_paypal" value=""/>
+                          <input type="hidden" name="custom" class="custom_paypal" value="">
                           <input type="hidden" name="cmd" value="_s-xclick">
                           <input type="hidden" name="hosted_button_id" value="SFKCAFX98LPNJ">
                           <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
@@ -87,7 +87,7 @@
                         </form>
                       </div>
                       <div class="col-sm-12 col-md-12 col-lg-6 payment-option">
-                        <br/><p>Bank Deposite</p> <br/>
+                        <br/><p>OPTION 2: Bank Deposite</p> <br/>
                         <a href="reg-bank.html">Account Details</a>
                         </br></br></br>
                       </div>
@@ -98,7 +98,7 @@
                   <br/><p>Your credit card will be charged <strong>USD 26</strong> (near equivalant of Rs.4000/-) monthly for next 6 months when your innovation pack is shipped from our wearhouse. 
                     <br/><br/> In the unlikely event you are not satisfied with our subscription, let us know within 3 months. We will <strong>refund you the total amount paid</strong> (including for already shipped items). <br/><br/></p> 
                     
-                    Click below button to proceed with PayPal payment<br/>
+                    <p>Click below button to proceed with PayPal payment</p><br/>
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                       <input type="hidden" name="custom"  class="custom_paypal" value=""/>
                       <input type="hidden" name="cmd" value="_s-xclick">
@@ -112,7 +112,7 @@
           <!--widget end-->
             
         </div>
-      </form>
+      </div>
     </section>
       
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script> 
