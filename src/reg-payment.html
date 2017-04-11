@@ -27,10 +27,6 @@
 </head>
 
   <body class="login-body">
-
-
-
-
     
     <nav class="navbar navbar-reg">
         <div class="row">
@@ -56,18 +52,13 @@
         </div>
     </nav>
 
-
-
-
-
-
   
     <div class="container">
 
 
     <section class="row">
       <form class="form-signin form-payment">
-        <h2 class="form-signin-heading">IgniterBee Payment</h2>
+        <h2 class="form-signin-heading">IgniterBee Registration <br/>(STEP 4/6)</h2>
         <div class="login-wrap">
             
           <section class="panel">
@@ -88,6 +79,7 @@
                       <div class="col-sm-12 col-md-12 col-lg-6 payment-option">
                         <br/><p>PayPal/Creditcard</p> 
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                          <input type="hidden" name="custom" class="custom_paypal" value=""/>
                           <input type="hidden" name="cmd" value="_s-xclick">
                           <input type="hidden" name="hosted_button_id" value="SFKCAFX98LPNJ">
                           <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
@@ -108,6 +100,7 @@
                     
                     Click below button to proceed with PayPal payment<br/>
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                      <input type="hidden" name="custom"  class="custom_paypal" value=""/>
                       <input type="hidden" name="cmd" value="_s-xclick">
                       <input type="hidden" name="hosted_button_id" value="3DTK2CREVYSVY">
                       <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
@@ -132,7 +125,8 @@
             $('.nav-tabs a[href="#' + tab + '"]').tab('show');
 
             var phoneGuardian = sessionStorage.getItem("phoneNumber");
-            $('.paypal_return_input input').val('https://lab.igniterbee.com/reg_success.html?phone=' + phoneGuardian);
+            var timestamp = sessionStorage.getItem("timestamp");
+            var subscription_id = phoneGuardian + "_" + timestamp;
 
             $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
               var target = $(e.target).attr("href");

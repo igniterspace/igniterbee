@@ -67,14 +67,15 @@
         </div>
 
         <form class="form-signin"  id="verifyForm" method="get" action="http://lab.igniterbee.com/api/register">
-            <h2 class="form-signin-heading">IgniterBee Registration</h2>
+            <h2 class="form-signin-heading">IgniterBee Registration <br/>(STEP 1/6)</h2>
             <div class="login-wrap">
                 <p>We have sent a 4 digit verification code to  your mobile phone number <span id="phone"/>. Please enter that code in order to proceed.</p>
-                
-                <input type="number" class="form-control" id="code" name="code" placeholder="Enter Verification Code" autocomplete="off" required autofocus>
-                <br/>
+                <p>
+                <input type="number" max="9999" min="1000" class="form-control validation-code" id="code" name="code" placeholder="Enter Verification Code" autocomplete="off" required autofocus>
+                <br/><br/>
 
                 <button class="btn btn-lg btn-success btn-block btn-wizard" type="submit">Next ></button>
+                </p>
                 <br/>
                 <div class="registration">
                     Already Registered?

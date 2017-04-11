@@ -14,6 +14,11 @@ Website: http://thevectorlab.net/
   .iti-flag {background-image: url("../img/flags@2x.png");}
 }
 
+.validation-code {
+    width: 200px;
+    display: inline;
+}
+
 .payment-option {
   border: 1px solid #ccc;
   height: 120px;
@@ -74,6 +79,7 @@ a, a:hover, a:focus {
 
 .btn-wizard {
     width: 100px;
+    display: inline;
 }
 
 /*login page*/
@@ -93,7 +99,7 @@ a, a:hover, a:focus {
 
 .form-signin h2.form-signin-heading {
     margin: 0;
-    padding:30px 15px;
+    padding:15px 15px;
     text-align: center;
     background: #ff6c60;
     border-radius: 5px 5px 0 0;
