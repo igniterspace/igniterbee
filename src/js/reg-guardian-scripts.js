@@ -1,6 +1,15 @@
 
 $(document).ready(function(){
 
+    var tab = 'atonce';
+    $(document).ready(function(){
+        var temp = null;
+        if (temp = getUrlParameter('tab')) {
+            tab = temp;
+        }
+        sessionStorage.setItem("tab", tab)
+    });
+
     $("#phone").intlTelInput({
       preferredCountries: ['lk'],
       utilsScript: "js/utils.js"
@@ -8,19 +17,22 @@ $(document).ready(function(){
 
     var API_URL = "https://oxe44imldk.execute-api.us-west-2.amazonaws.com/dev/register";
     $( "#signupForm" ).submit(function( event ) {
+        event.preventDefault();
         //--
         //make ajax request here
-        var phoneGuardian = sessionStorage.getItem("phoneNumber");
+        
+        var phoneNumber = $("#phone").intlTelInput("getNumber")
         var email = $('#parentsemail').val();
         var name = $('#parentsname').val();
 
         sessionStorage.setItem("parentEmail", email);
         sessionStorage.setItem("parentName", name);
-        
+        sessionStorage.setItem("phoneNumber", phoneNumber);
+
         $.ajax({
             type: 'POST',
             url: API_URL,
-            data: JSON.stringify({"phoneNumber": phoneGuardian, "parentEmail": email, "parentName": name}),
+            data: JSON.stringify({"phoneNumber": phoneNumber, "parentEmail": email, "parentName": name}),
             contentType: "application/json",
             success: function(data) {
                 if("SUCCESS" != data) {
@@ -31,7 +43,7 @@ $(document).ready(function(){
                 }
             }
         });
-        event.preventDefault();
+        
     });
 });
 

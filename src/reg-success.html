@@ -72,14 +72,9 @@
         <form class="form-signin"  id="verifyForm" method="get" action="">
             <h2 class="form-signin-heading">IgniterBee Registration</h2>
             <div class="login-wrap">
-                <p>Thank you for your payment. You will recieve your first innovation pack within a week.</p>
-                <p>
-                    timestamp: <span id="timestamp"></span> <br/>
-
-                    phone: <span id="phone"></span> <br/>
-                    
-                    subscription: <span id="subscription"></span> <br/>
-                </p>
+                <h2>Congratulations <span id="name"></span>! </h2> <br/>
+                <p>You are now a part of IgniterBee Innovator community! Thank you for the payment. We will contact you soon regarding the delivery of your monthly innovation packs.</p><br/>
+                <p><h3>Need more information? <br/>Call us on +94 774 223 902 <br/>OR email to hello@igniterbee.com</h3></p>
             </div>
 
         </form>
@@ -100,7 +95,7 @@
     <script>
        $("#phone").text(sessionStorage.getItem("phoneNumber"));
        $("#timestamp").text(sessionStorage.getItem("timestamp"));
-       $("#subscription").text(sessionStorage.getItem("tab"));
+       $("#name").text(sessionStorage.getItem("parentName"));
     </script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

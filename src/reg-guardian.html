@@ -68,22 +68,22 @@
           <p><span class="glyphicon glyphicon-alert" style="float:left; margin:12px 12px 20px 0; color:red; font-size: 1.7em"></span>An error has occured. Please enter all your details correctly.</p>
         </div>
 
-        <form class="form-signin"  id="signupForm" method="get" action="http://lab.igniterbee.com/api/register">
+        <form class="form-signin"  id="signupForm" method="post" action="">
             <h2 class="form-signin-heading">IgniterBee Registration <br/>(STEP 1/3)</h2>
             <div class="login-wrap">
-                <p>Enter parent/guardian details</p>
+                <p><h3>Enter parent/guardian details</h3></p><br/>
                 <input type="number" id="phone" class="form-control"  required autofocus><br/><br/>
                 <input type="text" class="form-control" id="parentsname" name="parentsname" placeholder="Parent's Name *"  required autofocus>
-                <input type="text" class="form-control" id="parentsemail" name="parentsemail" placeholder="Parent's Email *" required autofocus>
+                <input type="email" class="form-control" id="parentsemail" name="parentsemail" placeholder="Parent's Email (optional)"> <br/>
  
                 <button class="btn btn-lg btn-success btn-block btn-wizard" type="submit">Next ></button>
                 <br/><br/>
-                <div class="registration">
+                <!--div class="registration">
                     Already Registered?
                     <a class="" href="login.html">
                         Login here
                     </a>
-                </div>
+                </div-->
 
             </div>
 

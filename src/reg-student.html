@@ -61,12 +61,12 @@
 
       
       <div class="row">
-        <form class="form-signin"  id="signupForm" method="get" action="http://lab.igniterbee.com/api/register">
+        <form class="form-signin"  id="signupForm" method="get" action="">
             <h2 class="form-signin-heading">IgniterBee Registration <br/>(STEP 2/3)</h2>
             <div class="login-wrap">
                 
             
-            <p>Enter child's details</p>
+            <p><h3>Enter child details</h3></p><br/>
             <input type="text" class="form-control" id="childsname" name="childsname" placeholder="Child's Full Name *" required autofocus>
             <div class="row form-group">
                   <div class="col-lg-6 col-sm-6">
@@ -92,7 +92,7 @@
                   </div>
                   <div class="col-lg-6 col-sm-6">
                     <select class="form-control input-lg m-bot15" id="country" name="country" class="required" >
-                        <option value=""  selected disabled hidden>Country *</option>
+                        <option value="" disabled hidden>Country *</option>
                         <option value="AFG">Afghanistan</option>
                         <option value="ALA">Åland Islands</option>
                         <option value="ALB">Albania</option>
@@ -302,7 +302,7 @@
                         <option value="SGS">South Georgia and the South Sandwich Islands</option>
                         <option value="SSD">South Sudan</option>
                         <option value="ESP">Spain</option>
-                        <option value="LKA">Sri Lanka</option>
+                        <option value="LKA" selected>Sri Lanka</option>
                         <option value="SDN">Sudan</option>
                         <option value="SUR">Suriname</option>
                         <option value="SJM">Svalbard and Jan Mayen</option>
@@ -350,12 +350,12 @@
 
                 <button class="btn btn-lg btn-success btn-block btn-wizard" type="submit">Next ></button>
                 <br/>
-                <div class="registration">
+                <!--div class="registration">
                     Already Registered?
                     <a class="" href="login.html">
                         Login here
                     </a>
-                </div>
+                </div-->
 
             </div>
 
@@ -365,6 +365,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="js/registration-scripts.js"></script>
     <script src="js/reg-student-scripts.js"></script>
     <script>
