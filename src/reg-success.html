@@ -102,11 +102,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
     <script src="js/registration-scripts.js"></script>
     <script>
-       $("#phone").text(sessionStorage.getItem("phoneNumber"));
-       $("#timestamp").text(sessionStorage.getItem("timestamp"));
-       $("#name").text(sessionStorage.getItem("parentName"));
-    </script>
-    <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -115,5 +110,26 @@
         ga('create', 'UA-89972787-2', 'auto');
         ga('send', 'pageview');
     </script>  
+    <script>
+        $(document).ready(function(){
+            var phoneNumber = sessionStorage.getItem("phoneNumber");
+            var timestamp = sessionStorage.getItem("timestamp");
+
+            var API_URL = "https://oxe44imldk.execute-api.us-west-2.amazonaws.com/dev/SmsBankDetails";
+            
+            $.ajax({
+                type: 'POST',
+                url: API_URL,
+                data: JSON.stringify({"phoneNumber": phoneNumber, "timestamp":timestamp, "payMethod":"ToPaypal"}),
+                contentType: "application/json",
+                success: function(data) {
+                    if("SUCCESS" != data) {
+                        $("#dialog-error").dialog('option', 'title', "Payment confirmation SMS failed!");
+                        $("#dialog-error").dialog('open');
+                    } 
+                }
+            });
+        });
+    </script>
   </body>
 </html>
