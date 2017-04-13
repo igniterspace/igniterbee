@@ -81,7 +81,13 @@
             <input type="text" class="form-control" id="childsname" name="childsname" placeholder="Child's Full Name *" required autofocus>
             <div class="row form-group">
                   <div class="col-lg-6 col-sm-6">
-                    <input class="form-control form-control-inline input-medium default-date-picker"  id="childsbirthday" name="childsbirthday" size="16" type="text" value="" placeholder="Child's Birthday *"  required/>
+                    <!--input class="form-control form-control-inline input-medium default-date-picker"  id="childsbirthday" name="childsbirthday" size="16" type="text" value="" placeholder="Child's Birthday *"  required/-->
+                    <select class="form-control input-lg m-bot15" id="level" name="level" class="required" >
+                        <option value="" disabled hidden>Age Group *</option>
+                        <option value="L1">Age 6-8 (Level 1)</option>
+                        <option value="L2">Age 9-12 (Level 2)</option>
+                        <option value="L3">Age 13-16 (Level 3)</option>
+                    </select>
                   </div>
                   <div class="radios">
                         <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Gender</label>

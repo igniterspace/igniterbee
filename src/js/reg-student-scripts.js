@@ -16,7 +16,7 @@ $(document).ready(function(){
             "phoneNumber": "" + phoneGuardian, 
             "childName": $('#childsname').val(), 
             "childGender": $("input[name='gender']:checked").val(), 
-            "childDob": $('#childsbirthday').val(), 
+            "level": $('#level').val(), 
             "city": $('#city').val(), 
             "country": $('#country').val(), 
             "shippingAddress": $('#shippingaddress').val() 
