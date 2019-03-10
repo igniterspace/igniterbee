@@ -15,7 +15,9 @@ $(document).ready(function(){
       utilsScript: "js/utils.js"
     });
 
+    //calls "RegistrationParent" lambda function
     var API_URL = "https://oxe44imldk.execute-api.us-west-2.amazonaws.com/dev/register";
+    
     $( "#signupForm" ).submit(function( event ) {
         event.preventDefault();
         //--
