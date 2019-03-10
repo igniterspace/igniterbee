@@ -22,5 +22,5 @@ aws lambda update-function-code --function-name "SmsBankDetails" --zip-file "fil
 cd ../..
 
 
-#git commit -am "deployed to AWS"
-#git push
+git commit -am "deployed to AWS"
+git push
